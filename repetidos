@@ -1,0 +1,38 @@
+<?php
+
+	$vector_original = array(); // AQUÍ LOS QUE ESTÁN MATRICULADOS PERIODO 2015 - 1
+
+	$vector_comparacion = array();// AQUÍ LOS QUE SE DEBEN COMPRAR
+
+$cont = 0;
+	
+	$nro_original = count($vector_original);
+	$nro_comparacion = count($vector_comparacion);
+	
+echo '<table border=1>';
+		
+		for($i = 0; $i < $nro_original; $i++)
+		{
+			for($j = 0; $j < $nro_comparacion; $j++)
+			{
+				if($vector_original[$i] == $vector_comparacion[$j])
+				{
+					echo '<tr>';
+						echo '<td>'.$vector_original[$i].'</td><td>SI - Esta</td>';
+					echo '</tr>';
+					$cont ++;
+				}
+			}
+			if ($cont == 0)
+			{
+				echo '<tr>';
+						echo '<td>'.$vector_original[$i].'</td><td>NO - Esta</td>';
+				echo '</tr>';
+			}
+			$cont =  0;
+		}
+		
+	echo '</table>';	
+	
+	
+?>
